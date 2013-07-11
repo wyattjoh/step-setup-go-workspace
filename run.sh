@@ -21,7 +21,7 @@ else
 fi
 
 mkdir -p "$package_dir"
-ln -s "$package_dir" "$WERCKER_SOURCE_DIR"
+cp -R $WERCKER_SOURCE_DIR/* "$package_dir"
 export WERCKER_SOURCE_DIR="$package_dir"
 
 info "\$WERCKER_SOURCE_DIR now points to: $WERCKER_SOURCE_DIR"
