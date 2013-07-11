@@ -1,5 +1,5 @@
 export GOPATH="$HOME/go"
-export PATH=$PATH:$GOPATH/bin
+export PATH="$PATH:$GOPATH/bin"
 
 # Make actual go workspace
 mkdir -p "$HOME/go/{src,pkg,bin}"
@@ -22,7 +22,7 @@ fi
 
 mkdir -p "$package_dir"
 ln -s $WERCKER_SOURCE_DIR "$package_dir";
-export $WERCKER_SOURCE_DIR="$package_dir"
+export WERCKER_SOURCE_DIR="$package_dir"
 
 info "\$WERCKER_SOURCE_DIR now points to: $WERCKER_SOURCE_DIR"
 success "Go workspace setup finished"
