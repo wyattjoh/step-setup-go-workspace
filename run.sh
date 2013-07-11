@@ -5,23 +5,23 @@ export PATH=$PATH:$GOPATH/bin
 mkdir -p "$HOME/go/{src,pkg,bin}"
 debug "Created Go workspace in $HOME/go"
 
-package_dir="/"
+package_dir=""
 if [ -z "$WERCKER_SETUP_GO_WORKSPACE_PACKAGE_DIR" ]
 then
   if [ ! -z "$WERCKER_GIT_REPOSITORY" ]
   then
     package_dir="$GOPATH/src/$WERCKER_GIT_DOMAIN/$WERCKER_GIT_OWNER/$WERCKER_GIT_REPOSTORY"
-    debug "package-dir option not set, will use default: $package-dir"
+    debug "package-dir option not set, will use default: $package_dir"
   else
     fail 'missing package-dir option and no repository info found, please add this the setup-package-dir step in wercker.yml'
   fi
 else
   package_dir="$GOPATH/src/$WERCKER_SETUP_PACKAGE_DIR_DIR"
-  debug "package-dir option set, will use: $package-dir"
+  debug "package-dir option set, will use: $package_dir"
 fi
 
 mkdir -p "$package_dir"
-ln -s $WERCKER_SOURCE_DIR "$GOPATH/src/$dir";
+ln -s $WERCKER_SOURCE_DIR "$package_dir";
 export $WERCKER_SOURCE_DIR="$package_dir"
 
 info "\$WERCKER_SOURCE_DIR now points to: $WERCKER_SOURCE_DIR"
