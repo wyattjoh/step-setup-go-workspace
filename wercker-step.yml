@@ -1,0 +1,7 @@
+name: setup-go-workspace
+version: 0.9
+description: |
+  Creates the Go workspace directory hierarchy and sets up the $GOPATH.
+  It also copies the source from the project into this hierarchy. You can
+  set the `dir` option to override the default package directory that is
+  the git provider url + user + project, eq: `github.com/pjvds/go-logging`
