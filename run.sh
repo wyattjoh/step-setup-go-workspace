@@ -10,7 +10,7 @@ if [ -z "$WERCKER_SETUP_GO_WORKSPACE_PACKAGE_DIR" ]
 then
   if [ ! -z "$WERCKER_GIT_REPOSITORY" ]
   then
-    package_dir="$GOPATH/src/$WERCKER_GIT_DOMAIN/$WERCKER_GIT_OWNER/$WERCKER_GIT_REPOSTORY"
+    package_dir="$GOPATH/src/$WERCKER_GIT_DOMAIN/$WERCKER_GIT_OWNER/$WERCKER_GIT_REPOSITORY"
     debug "package-dir option not set, will use default: $package_dir"
   else
     fail 'missing package-dir option and no repository info found, please add this the setup-package-dir step in wercker.yml'
