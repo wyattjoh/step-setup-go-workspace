@@ -1,9 +1,6 @@
-export GOPATH="$HOME/go"
-export PATH="$PATH:$GOPATH/bin"
-
-# Make actual go workspace
-mkdir -p "$HOME/go/{src,pkg,bin}"
-debug "Created Go workspace in $HOME/go"
+if [ -z "$GOPATH" ] then
+  fail 'No go workspace found. Please make sure there is an go workspace and $GOPATH available'
+fi
 
 package_dir=""
 if [ -z "$WERCKER_SETUP_GO_WORKSPACE_PACKAGE_DIR" ]
