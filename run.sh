@@ -1,4 +1,5 @@
-if [ -z "$GOPATH" ] then
+if [ -z "$GOPATH" ]
+then
   fail 'No go workspace found. Please make sure there is an go workspace and $GOPATH available'
 fi
 
