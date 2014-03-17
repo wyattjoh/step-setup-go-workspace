@@ -14,7 +14,7 @@ then
     fail 'missing package-dir option and no repository info found, please add this the setup-package-dir step in wercker.yml'
   fi
 else
-  package_dir="$GOPATH/src/$WERCKER_SETUP_PACKAGE_DIR_DIR"
+  package_dir="$GOPATH/src/$WERCKER_SETUP_GO_WORKSPACE_PACKAGE_DIR"
   debug "package-dir option set, will use: $package_dir"
 fi
 
