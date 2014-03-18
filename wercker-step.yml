@@ -1,6 +1,6 @@
 name: setup-go-workspace
-version: 1.0.2
+version: 1.0.3
 description: |
   Adds the project to the Go workspace directory hierarchy.
-  You can set the `dir` option to override the default package directory that is
+  You can set the `package_dir` option to override the default package directory that is
   the git provider url + user + project, eq: `github.com/wercker/go-logging/logging`
