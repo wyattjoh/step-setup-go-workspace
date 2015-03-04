@@ -18,8 +18,8 @@ else
   debug "package-dir option set, will use: $package_dir"
 fi
 
-mkdir -p "$package_dir"
-rsync -avz "$WERCKER_SOURCE_DIR/" "$package_dir/"
+mkdir -p $(dirname "$package_dir")
+mv "$WERCKER_SOURCE_DIR" "$package_dir"
 export WERCKER_SOURCE_DIR="$package_dir"
 
 info "\$WERCKER_SOURCE_DIR now points to: $WERCKER_SOURCE_DIR"
