@@ -19,7 +19,7 @@ else
 fi
 
 mkdir -p $(dirname "$package_dir")
-mv "$WERCKER_SOURCE_DIR" "$package_dir"
+cp -a "$WERCKER_SOURCE_DIR" "$package_dir"
 export WERCKER_SOURCE_DIR="$package_dir"
 
 info "\$WERCKER_SOURCE_DIR now points to: $WERCKER_SOURCE_DIR"
