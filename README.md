@@ -1,6 +1,6 @@
 # setup-go-workspace
 
-Move your code from the working directory into the $GOPATH. Introspection is
+Move your code from the working directory into the `$GOPATH`. Introspection is
 done via environment variables, to determine the git provider host, owner, and
 repository name. You are able to overwrite this path using a option.
 
@@ -8,6 +8,9 @@ repository name. You are able to overwrite this path using a option.
 
 - `package-dir` (optional) The path inside `$GOPATH/src` to use. If left empty,
 the step will use the environment variables to figure out where to put the code.
+- `gopath` (optional, default: `$GOPATH`) This should contain a path to the
+workspace where the code should be installed. Use this when `$GOPATH` contains
+multiple directories.
 
 # Example
 
