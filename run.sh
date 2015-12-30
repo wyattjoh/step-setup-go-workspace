@@ -4,6 +4,9 @@ fi
 
 debug "Using $WERCKER_SETUP_GO_WORKSPACE_GOPATH as root dir"
 
+export GO15VENDOREXPERIMENT=1
+info "Using GO15VENDOREXPERIMENT=1"
+
 package_dir=""
 if [ -z "$WERCKER_SETUP_GO_WORKSPACE_PACKAGE_DIR" ]
 then
